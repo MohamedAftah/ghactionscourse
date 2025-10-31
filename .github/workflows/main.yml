@@ -1,6 +1,6 @@
-name:  FirstWorkflow
+name: FirstWorkflow
 
-on: 
+on:
   push:
     branches:
       - main
@@ -10,11 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4  # آخر إصدار مستقر (مش 5.0.0)
+
       - name: Print a welcome message
         run: echo "Welcome to our first GitHub Actions Workflow!"
-      
-      - name: Checkout repository  
-        uses: actions/checkout@5.0.0
 
       - name: List repository files
-        run: ls -la 
+        run: ls -la
